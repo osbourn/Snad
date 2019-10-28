@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "minecraft:blocks/red_sand"
+    "all": "minecraft:block/red_sand"
   }
 }
