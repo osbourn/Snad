@@ -1,4 +1,26 @@
 <h1 align="center">Snad - Back to the Past</h1>
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lazynessmind/Snad.svg">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/lazynessmind/Snad.svg">
+  
+  <a href="https://github.com/lazynessmind/Snad/commits/1.14.4">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lazynessmind/Snad.svg">
+  </a>
+
+  <a href="https://github.com/lazynessmind/Snad/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/lazynessmind/Snad.svg">
+  </a>
+
+  <a href="https://www.curseforge.com/minecraft/mc-mods/snad-back-to-the-future">
+    <img alt="Repository issues" src="http://cf.way2muchnoise.eu/full_349596_downloads.svg">
+  </a>
+
+  <a href="https://www.curseforge.com/minecraft/mc-mods/snad-back-to-the-future">
+    <img alt="Repository issues" src="http://cf.way2muchnoise.eu/versions/349596.svg">
+  </a>
+  
+</p>
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/lazynessmind/Snad/1.14.4/imgs/logo.png"><br>
 </h1>
