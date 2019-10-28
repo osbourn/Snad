@@ -22,7 +22,7 @@
   
 </p>
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/lazynessmind/Snad/1.14.4/imgs/logo.png"><br>
+  <img src="https://github.com/lazynessmind/Snad/blob/1.14.4/imgs/logo.png"><br>
 </h1>
 
 [Credits](#credits) - Credits to those that deserve them.
