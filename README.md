@@ -1,4 +1,7 @@
 <h1 align="center">Snad - Back to the Past</h1>
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/lazynessmind/Snad/1.14.4/imgs/logo.png"><br>
+</h1>
 
 [Credits](#credits) - Credits to those that deserve them.
 
