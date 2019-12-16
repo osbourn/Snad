@@ -3,7 +3,7 @@ loaderVersion="[28,)" #mandatory (28 is current forge version)
 issueTrackerURL="https://github.com/lazynessmind/Snad/issues" #optional
 [[mods]] #mandatory
 modId="snad" #mandatory
-version="1.7.10.27a" #mandatory
+version="1.7.10.28a" #mandatory
 displayName="Snad" #mandatory
 updateJSONURL="https://raw.githubusercontent.com/lazynessmind/Snad/master/update.json" #optional
 displayURL="https://www.curseforge.com/minecraft/mc-mods/snad-back-to-the-past" #optional
