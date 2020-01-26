@@ -20,7 +20,7 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = co
 
 minecraft {
     
-    mappings channel: 'snapshot', version: '20191020-1.14.3'
+    mappings channel: "${mcp_mappings_channel}", version: "${mcp_mappings_version}"
     
     runs {
         client {
