@@ -44,8 +44,8 @@ public class SnadBlock extends FallingBlock {
 
 
     @Override
-    public void func_225534_a_(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        super.func_225534_a_(state, world, pos, random);
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        super.tick(state, world, pos, random);
 
         Block blockAbove = world.getBlockState(pos.up()).getBlock();
 
@@ -60,7 +60,7 @@ public class SnadBlock extends FallingBlock {
                         for (int growthAttempts = 0; growthAttempts < ModConfigs.SPEED_INCREASE_DEFAULT_VALUE.get();
                              growthAttempts++) {
                             if (growthAttempts == 0 | canSustainPlant(world.getBlockState(pos), world, pos, null, (IPlantable) blockAbove)) {
-                                nextPlantBlock.func_225534_a_(world.getBlockState(pos.up(height)), world, pos.up(height), random);
+                                nextPlantBlock.randomTick(world.getBlockState(pos.up(height)), world, pos.up(height), random);
                             }
                         }
                         height++;
@@ -72,7 +72,7 @@ public class SnadBlock extends FallingBlock {
                 }
             }
         } else if (blockAbove instanceof IPlantable) {
-            blockAbove.func_225534_a_(world.getBlockState(pos.up()), world, pos.up(), random);
+            blockAbove.randomTick(world.getBlockState(pos.up()), world, pos.up(), random);
         }
     }
 
