@@ -12,22 +12,23 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = "${minecraft_version}-${mod_version}"
+version = "${mod_version}"
 group = 'com.lazynessmind.snad'
 archivesBaseName = 'snad'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
 minecraft {
-    
     mappings channel: "${mcp_mappings_channel}", version: "${mcp_mappings_version}"
-    
+
     runs {
         client {
             workingDirectory project.file('run')
-            
+
+            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            
+
+            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
             mods {
@@ -39,9 +40,11 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-            
+
+            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            
+
+            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
             mods {
@@ -53,9 +56,11 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
-            
+
+            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            
+
+            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
             args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/')
@@ -70,10 +75,10 @@ minecraft {
 }
 
 dependencies {
-
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 }
 
+// Example for how to get properties into the manifest for reading by the runtime..
 jar {
     manifest {
         attributes([
@@ -88,7 +93,10 @@ jar {
     }
 }
 
-
+// Example configuration to allow publishing using the maven-publish task
+// we define a custom artifact that is sourced from the reobfJar output task
+// and then declare that to be published
+// Note you'll need to add a repository here
 def reobfFile = file("$buildDir/reobfJar/output.jar")
 def reobfArtifact = artifacts.add('default', reobfFile) {
     type 'jar'
