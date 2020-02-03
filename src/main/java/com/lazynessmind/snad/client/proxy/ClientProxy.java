@@ -1,6 +1,7 @@
 package com.lazynessmind.snad.client.proxy;
 
 import com.lazynessmind.snad.common.interfaces.IProxy;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 
@@ -13,11 +14,11 @@ public class ClientProxy implements IProxy {
 
     @Override
     public World getClientWorld() {
-        return null;
+        return Minecraft.getInstance().world;
     }
 
     @Override
     public PlayerEntity getClientPlayer() {
-        return null;
+        return Minecraft.getInstance().player;
     }
 }
