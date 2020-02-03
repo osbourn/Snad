@@ -3,9 +3,9 @@ loaderVersion="[30,)" #mandatory (30 is current forge version)
 issueTrackerURL="https://github.com/lazynessmind/Snad/issues" #optional
 [[mods]] #mandatory
 modId="snad" #mandatory
-version="1.8.1.10a" #mandatory
+version="1.8.3.3a" #mandatory
 displayName="Snad" #mandatory
-updateJSONURL="https://raw.githubusercontent.com/lazynessmind/Snad/master/update.json" #optional
+updateJSONURL="https://raw.githubusercontent.com/lazynessmind/Snad/1.15.2/update.json" #optional
 displayURL="https://www.curseforge.com/minecraft/mc-mods/snad-back-to-the-past" #optional
 logoFile="" #optional
 credits="TheRoBrit (Original mod)" #optional

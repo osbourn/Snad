@@ -4,7 +4,7 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/lazynessmind/Snad.svg">
   
-  <a href="https://github.com/lazynessmind/Snad/commits/1.15.1">
+  <a href="https://github.com/lazynessmind/Snad/commits/1.15.2">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lazynessmind/Snad.svg">
   </a>
 
@@ -22,7 +22,7 @@
   
 </p>
 <h1 align="center">
-  <img src="https://github.com/lazynessmind/Snad/blob/1.15.1/imgs/logo.png"><br>
+  <img src="https://github.com/lazynessmind/Snad/blob/1.15.2/imgs/logo.png"><br>
 </h1>
 
 [Credits](#credits) - Credits to those that deserve them.
