@@ -37,7 +37,7 @@ Here are a list of some of the people/person(s) that I'd like to thank for helpi
 #### Contact Me
 Here are some of the places you can find/contact me:
 * [Twitch](http://twitch.tv/lazynessmind)
-* [Twitter](https://twitter.com/kratosyt21)
+* [Twitter](https://twitter.com/_nesslazy)
 
 # License:
 
