@@ -1,5 +1,5 @@
 modLoader="javafml" #mandatory
-loaderVersion="[30,)" #mandatory (30 is current forge version)
+loaderVersion="[31,)" #mandatory (30 is current forge version)
 issueTrackerURL="https://github.com/lazynessmind/Snad/issues" #optional
 [[mods]] #mandatory
 modId="snad" #mandatory
