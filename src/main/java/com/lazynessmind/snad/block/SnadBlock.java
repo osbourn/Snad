@@ -1,7 +1,7 @@
-package com.lazynessmind.snad.common.block;
+package com.lazynessmind.snad.block;
 
-import com.lazynessmind.snad.common.item.ModItems;
-import com.lazynessmind.snad.common.registry.ModConfigs;
+import com.lazynessmind.snad.Configs;
+import com.lazynessmind.snad.proxy.CommonProxy;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -13,6 +13,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.PlantType;
 
@@ -22,18 +23,12 @@ public class SnadBlock extends FallingBlock {
 
     private final int color;
 
-    public SnadBlock(String name, int color, MaterialColor materialColor) {
+    public SnadBlock(String registryName, int color, MaterialColor materialColor) {
         super(Block.Properties.create(Material.SAND, materialColor).tickRandomly().hardnessAndResistance(0.5f).sound(SoundType.SAND));
-
         this.color = color;
-
-        setRegistryName(name);
-
-        ModBlocks.BLOCKS.add(this);
-        Item.Properties properties = new Item.Properties().group(ItemGroup.MISC);
-        ModItems.ITEMS.add(new BlockItem(this, properties).setRegistryName(name));
+        Item.Properties itemProps = new Item.Properties().group(ItemGroup.BUILDING_BLOCKS);
+        CommonProxy.ITEMS.register(registryName, () -> new BlockItem(this, itemProps));
     }
-
 
     @Override
     public int getDustColor(BlockState state) {
@@ -41,32 +36,25 @@ public class SnadBlock extends FallingBlock {
     }
 
     @Override
-    public void randomTick(BlockState state, World world, BlockPos pos, Random random) {
-        super.randomTick(state, world, pos, random);
+    public void tick(BlockState state, World world, BlockPos pos, Random random) {
+        super.tick(state, world, pos, random);
 
         Block blockAbove = world.getBlockState(pos.up()).getBlock();
 
         if (blockAbove instanceof SugarCaneBlock || blockAbove instanceof CactusBlock) {
-            boolean isSameBlockType = true;
+
             int height = 1;
 
+            boolean isSameBlockType = true;
+
             while (isSameBlockType) {
-                if (world.getBlockState(pos.up(height)).getBlock() != Blocks.AIR) {
-                    Block nextPlantBlock = world.getBlockState(pos.up(height)).getBlock();
-                    if (nextPlantBlock.getClass() == blockAbove.getClass()) {
-                        for (int growthAttempts = 0; growthAttempts < ModConfigs.SPEED_INCREASE_DEFAULT_VALUE.get();
-                             growthAttempts++) {
-                            if (growthAttempts == 0 | canSustainPlant(world.getBlockState(pos), world, pos, null, (IPlantable) blockAbove)) {
-                                nextPlantBlock.randomTick(world.getBlockState(pos.up(height)), world, pos.up(height), random);
-                            }
-                        }
-                        height++;
-                    } else {
-                        isSameBlockType = false;
+                for (int i = 0; i < Configs.SPEED_INCREASE_DEFAULT_VALUE.get(); i++) {
+                    if (i == 0 | canSustainPlant(world.getBlockState(pos), world, pos, null, (IPlantable) blockAbove)) {
+                        world.getBlockState(pos.up(height)).getBlock().randomTick(world.getBlockState(pos.up(height)), world, pos.up(height), random);
                     }
-                } else {
-                    isSameBlockType = false;
                 }
+                height++;
+                isSameBlockType = world.getBlockState(pos.up(height)).getBlock().getClass() == blockAbove.getClass();
             }
         } else if (blockAbove instanceof IPlantable) {
             blockAbove.randomTick(world.getBlockState(pos.up()), world, pos.up(), random);
