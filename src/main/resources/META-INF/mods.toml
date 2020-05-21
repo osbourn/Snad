@@ -1,12 +1,10 @@
-modLoader="javafml" #mandatory
-loaderVersion="[31,)" #mandatory (30 is current forge version)
-issueTrackerURL="https://github.com/lazynessmind/Snad/issues" #optional
-[[mods]] #mandatory
-modId="snad" #mandatory
-version="1.8.6.20a" #mandatory
-displayName="Snad" #mandatory
-displayURL="https://www.curseforge.com/minecraft/mc-mods/snad-back-to-the-past" #optional
-logoFile="" #optional
-credits="TheRoBrit (Original mod)" #optional
-authors="lazynessmind (me), TheRoBrit" #optional
-description='''You're finally able to have your sugarcane grow faster. What could possibly be better than that?''' #mandatory
+modLoader="javafml"
+loaderVersion="[31,)"
+issueTrackerURL="https://github.com/lazynessmind/Snad/issues"
+[[mods]]
+modId="snad"
+version="1.8.7.21a"
+displayName="Snad"
+credits="TheRoBrit (Original mod)"
+authors="lazynessmind (me), TheRoBrit"
+description='''You're finally able to have your sugarcane grow faster. What could possibly be better than that?'''
