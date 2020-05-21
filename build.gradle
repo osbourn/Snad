@@ -114,3 +114,8 @@ publishing {
         }
     }
 }
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'deobf'
+}
