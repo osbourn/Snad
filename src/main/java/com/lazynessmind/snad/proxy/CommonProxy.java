@@ -12,8 +12,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class CommonProxy {
 
-    public static DeferredRegister<Block> BLOCKS = new DeferredRegister<Block>(ForgeRegistries.BLOCKS, Snad.MODID);
-    public static DeferredRegister<Item> ITEMS = new DeferredRegister<Item>(ForgeRegistries.ITEMS, Snad.MODID);
+    public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Snad.MODID);
+    public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Snad.MODID);
     public static RegistryObject<SnadBlock> SNAD_BLOCK = BLOCKS.register("snad", () -> new SnadBlock("snad", -2370656, MaterialColor.SAND));
     public static RegistryObject<SnadBlock> RED_SNAD_BLOCK = BLOCKS.register("red_snad", () -> new SnadBlock("red_snad", -5679071, MaterialColor.ADOBE));
 

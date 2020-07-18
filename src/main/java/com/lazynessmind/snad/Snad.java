@@ -18,7 +18,7 @@ public class Snad {
     public Snad() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Configs.COMMON_CONFIG);
 
-        proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
+        proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
         proxy.init();
 
         Configs.load(Configs.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve("snad-common.toml"));
