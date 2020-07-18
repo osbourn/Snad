@@ -50,7 +50,7 @@ public class SnadBlock extends FallingBlock {
             while (isSameBlockType) {
                 for (int i = 0; i < Configs.SPEED_INCREASE_DEFAULT_VALUE.get(); i++) {
                     if (i == 0 | canSustainPlant(world.getBlockState(pos), world, pos, null, (IPlantable) blockAbove)) {
-                        world.getBlockState(pos.up(height)).getBlock().randomTick(world.getBlockState(pos.up(height)), world, pos.up(height), random);
+                        world.getBlockState(pos.up(height)).randomTick(world, pos.up(height), random);
                     }
                 }
                 height++;
